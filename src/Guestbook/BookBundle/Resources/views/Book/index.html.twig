@@ -1,0 +1,12 @@
+{% extends 'GuestbookBookBundle::layout.html.twig' %}
+
+{% block main_content %}
+    {% for post in posts %}
+        <article class="guestbook_post">
+            <header>#{{ post.id }} From: {{ post.name }} (Email: {{ post.email }})</header>
+            <p>{{ post.comment }}</p>
+        </article>
+    {% else %}
+        <p>No posts for the guestbook. Be first to comment...</p>
+    {% endfor %}
+{% endblock %}

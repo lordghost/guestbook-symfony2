@@ -1,0 +1,18 @@
+GuestbookAdminBundle_homepage:
+    pattern:  /admin/
+    defaults: { _controller: GuestbookAdminBundle:Admin:index }
+        
+GuestbookAdminBundle_logout:
+    pattern:  /admin/logout
+
+GuestbookAdminBundle_login:
+    pattern:   /admin/login
+    defaults:  { _controller: GuestbookAdminBundle:Admin:login }
+
+GuestbookAdminBundle_login_check:
+    pattern:   /admin/login_check   
+
+GuestbookAdminBundle_approve_post:
+    pattern:    /admin/approve_post/{postid}
+    defaults:  { _controller: GuestbookAdminBundle:Admin:approvePost, postid: 0}
+

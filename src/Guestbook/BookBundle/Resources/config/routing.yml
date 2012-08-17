@@ -1,0 +1,19 @@
+GuestbookBookBundle_homepage:
+    pattern:  /
+    defaults: { _controller: GuestbookBookBundle:Book:index }
+    requirements:
+        _method:  GET    
+
+
+GuestbookBookBundle_about:
+    pattern: /about
+    defaults: { _controller: GuestbookBookBundle:Book:about }
+    requirements:
+        _method: GET
+
+
+GuestbookBookBundle_post_new_comment:
+    pattern: /new_comment
+    defaults: { _controller: GuestbookBookBundle:Book:postComment }
+    requirements:
+         _method: POST

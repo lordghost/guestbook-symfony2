@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Guestbook in Symfony 2{% endblock %}</title>
+        <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        {% block stylesheets %}
+	    <link href="http://fonts.googleapis.com/css?family=Courgette" rel="stylesheet" media="screen">
+            <link href="http://fonts.googleapis.com/css?family=Fredoka+One" rel="stylesheet" media="screen">
+            {% stylesheets  'css/*' output='css/main.css' filter='cssrewrite' %}
+                <link href="{{ asset_url }}" rel="stylesheet" media="screen" />
+            {% endstylesheets %}
+        {% endblock %}
+        <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+	<section id="wrapper">
+	    <header id="header">
+                <div class="top">
+                    <nav>
+                        <ul class="navigation">
+                            <li><a href="{{ path('GuestbookBookBundle_homepage') }}">Home</a></li>
+                            <li><a href="{{ path('GuestbookBookBundle_about') }}">About</a></li>
+                            {% if is_granted('ROLE_USER') %}
+                                <li><a href="{{ path('GuestbookAdminBundle_homepage') }}">Admin</a></li>
+                                <li><a href="{{ path('GuestbookAdminBundle_logout') }}">Logout</a></li>
+                            {% else %}
+                                <li><a href="{{ path('GuestbookAdminBundle_login') }}">Login</a></li>
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </header>
+
+
+            {% block body %}{% endblock %}
+
+            {% block javascripts %}
+                <script src= "http://code.jquery.com/jquery-1.8.0.min.js" type="text/javascript"></script>
+            {% endblock %}
+        </section>
+    </body>
+</html>

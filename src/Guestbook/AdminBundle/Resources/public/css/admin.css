@@ -1,0 +1,56 @@
+.admin_login_form {
+    width:  400px;
+    border: 1px solid white;
+    margin: 10px auto;
+}
+
+.admin_login_form .row {
+    margin: 0 auto;
+    padding: 2px;
+}
+
+.admin_login_form .row label {
+    font-weight: bold;
+    display: block;
+    float: left;
+    width: 180px;
+    padding-left: 20px;
+}
+
+.admin_login_form .row input {
+    border: 1px solid #0A2714;
+}
+
+.admin_login_form .row button {
+    margin-left: 160px;
+    width: 80px;
+}
+
+#login_error {
+    display: block;
+    width: 200px;
+    margin: 10px auto;
+    background-color: yellow;
+    color: red;
+    border: 1px solid red;
+    padding: 2px;
+    font-size: 0.8em;
+}
+
+.admin_waiting_post {
+    font-size: 0.8em;
+    width: 100%;
+}
+
+.admin_waiting_post header {
+    width: 30%;
+    background-color: #92D97D;
+    float: left;
+    padding: 2px;
+}
+
+.admin_waiting_post p {
+    width: 100%;
+    background-color: #C5E6BB;
+    padding: 2px;
+}

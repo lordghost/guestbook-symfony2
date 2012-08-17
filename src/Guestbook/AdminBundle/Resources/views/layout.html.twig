@@ -1,0 +1,23 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    {% stylesheets '@GuestbookAdminBundle/Resources/public/css/*' output='css/main.css' filter='cssrewrite' %}
+	<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock %}
+
+{% block body %}
+    <section id="main_content">
+	    {% block main_content %}{% endblock %}
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {% javascripts '@GuestbookAdminBundle/Resources/public/js/*' %}
+	<script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock %}

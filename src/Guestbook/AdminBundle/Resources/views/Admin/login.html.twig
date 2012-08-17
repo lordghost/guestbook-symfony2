@@ -1,0 +1,28 @@
+{% extends 'GuestbookAdminBundle::layout.html.twig' %}
+
+{% block main_content %}
+    {% if error %}
+        <div id="login_error">
+            <div>{{ error.message }}</div>
+        </div>
+    {% endif %}
+
+
+    <form action="{{ path('GuestbookAdminBundle_login_check') }}" method="post" class="admin_login_form">
+        <div class="row">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" />
+        </div>
+
+        <div class="row">
+            <label for="password"> Password:</label>
+            <input type="password" id="password" name="_password" />
+        </div>
+
+        <input type="hidden" name="_target_path" value="/admin" />
+
+        <div class="row">
+            <button type="submit">Login</button>
+        </div>
+    </form>
+{% endblock %}

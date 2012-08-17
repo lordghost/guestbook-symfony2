@@ -1,0 +1,22 @@
+{% extends '::base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+
+	{% stylesheets '@GuestbookBookBundle/Resources/public/css/*' output='css/main.css' filter='cssrewrite' %}
+		<link rel="stylesheet" type="text/css" href="{{ asset_url }}" />
+	{% endstylesheets %}
+
+{% endblock %}
+
+{% block body %}
+<section id="main_content">
+	{% block main_content %}{% endblock %}
+</section>
+
+<aside id="sidebar">
+	{% block sidebar %}
+		{% render "GuestbookBookBundle:Book:sidebar" %}
+	{% endblock %}
+</aside>
+{% endblock %}

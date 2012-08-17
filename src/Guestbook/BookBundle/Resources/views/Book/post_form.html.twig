@@ -1,0 +1,26 @@
+<form action="{{ path('GuestbookBookBundle_post_new_comment') }}" method="post" {{ form_enctype(form) }} class="guestbook_post_form">
+    {{ form_errors(form) }}
+
+	<div class="row">
+            {{ form_label(form.name, 'Your Name:') }}
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name) }}
+	</div>
+
+	<div class="row">
+            {{ form_label(form.email, 'Email Address:') }}
+            {{ form_errors(form.email) }}
+            {{ form_widget(form.email) }}
+	</div>
+
+	<div class="row">
+            {{ form_label(form.comment, 'Your message') }}
+            {{ form_errors(form.comment) }}
+            {{ form_widget(form.comment) }}
+	</div>
+
+	{{ form_rest(form) }}
+    <p>
+        <input type="submit" value="Submit">
+    </p>
+</form>
