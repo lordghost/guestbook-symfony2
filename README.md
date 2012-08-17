@@ -17,7 +17,7 @@ to see any further modifications in need to be done.
 
 + **Create the database and the tables**
 
-    cd <guestbook_dir>
+    cd guestbook_dir
 
     php app/console doctrine:database:create
 
